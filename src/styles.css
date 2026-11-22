@@ -1,0 +1,55 @@
+@layer theme, base, mui, components, utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    background: #d5b7ff;
+    color: #271643;
+  }
+  :focus-visible {
+    outline: 3px solid var(--mui-palette-primary-main);
+    outline-offset: 4px;
+  }
+}
+
+@keyframes bloom {
+  0%,
+  100% {
+    transform: scale(0.97);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
